@@ -16,3 +16,19 @@ body{
     object-fit: cover;
     display: block;
 }
+
+#footButton{
+    position: absolute;
+    bottom: 30px;
+    left: 55%;
+    transform: translateX(-50%);
+
+    width: 200px;
+    height: auto;
+    cursor: pointer;
+    z-index: 10px;
+}
+
+#footButton:hover{
+    transform: translate(-50%) scale(1.15);
+}

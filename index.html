@@ -10,6 +10,8 @@
 
         <img id="parkImage" src="steps/step1.jpeg" alt="Entering Park with Concret Pavement">
 
+        <img id="footButton" src="feet/foot.png" alt="yellow footprints">
+
         <script>
          const images = [
             "steps/step1.jpeg",
@@ -26,18 +28,14 @@
 
         let currentStep = 0;
         const parkImage = document.getElementById("parkImage");
+const footButton = document.getElementById("footButton");
 
-        document.addEventListener("click", ()=> {
-            if (currentStep < images.length - 1){
-                currentStep++;
-                parkImage.src = images[currentStep];
-                console.log("Loading:", parkImage.src);
-            }
-        });
-
-        parkImage.addEventListener("error", ()=> {
-            console.error("Image failed to load:", parkImage.src)
-        });
+footButton.addEventListener("click", ()=> {
+    if(currentStep < images.length -1){
+        currentStep++;
+        parkImage.src = images[currentStep];
+    }
+});
             </script>
             </body>
             </html>
