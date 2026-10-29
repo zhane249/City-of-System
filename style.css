@@ -26,7 +26,7 @@ body{
     width: 200px;
     height: auto;
     cursor: pointer;
-    z-index: 10px;
+    z-index: 10;
 }
 
 #footButton:hover{
