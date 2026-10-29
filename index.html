@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="wide=device-width, initial scale=1.0">
+        <title> Roaming at Night </title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <img id="parkImage" src="steps/step1.jpeg" alt="Entering Park with Concret Pavement">
+
+        <script>
+            let currentStep = 1;
+            const totalSteps = 10;
+            const parkImage = document.getElementById("parkImage");
+
+            document.addEventListener("click", ()=>{
+                currentStep++;
+
+                if(currentStep> totalSteps){
+                    currentStep = 1;
+
+                }
+                parkImage.src = "steps/step" + currentStep + ".jpeg";
+            });
+            </script>
+            </body>
+            </html>
