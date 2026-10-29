@@ -15,11 +15,16 @@
             const totalSteps = 10;
             const parkImage = document.getElementById("parkImage");
 
+            for(let i = 1; i<= totalSteps; i++){
+                const img = new Image();
+                img.src - "steps/step" + i+ ".jpeg";
+            }
+
             document.addEventListener("click", ()=>{
                 currentStep++;
 
                 if(currentStep> totalSteps){
-                    currentStep = 1;
+                    currentStep++;
 
                 }
                 parkImage.src = "steps/step" + currentStep + ".jpeg";
