@@ -10,6 +10,8 @@
 
         <img id="parkImage" src="steps/step1.jpeg" alt="Entering Park with Concret Pavement">
 
+        <div id="handContainer"></div>
+
         <img id="footButton" src="feet/foot.png" alt="yellow footprints">
 
         <script>
@@ -30,12 +32,40 @@
         const parkImage = document.getElementById("parkImage");
 const footButton = document.getElementById("footButton");
 
+
+const handContainer = document.getElementById("handContainer");
+
+const handprints = [
+"hands/blue.png", "hands/green.png", "hands/orange.png", "hands/purple.png"
+        ];
+
+        const handCount = [2, 3, 1, 2, 4, 1, 3, 2, 4, 2];
+
+  function showHandprints(){
+    handContainer.innerHTML = "";
+
+    for (let i = 0; i< handCount[currentStep]; i++){
+        let hand =document.createElement("img");
+
+        hand.src = handprints [i % handprints.length];
+        hand.className = "handprint";
+        hand.style.left = (20 + i *20) + "%";
+        hand.style.top = (30 + i *10) + "%";
+        hand.style.width = "100px";
+
+        handContainer.appendChild(hand);
+    }
+  }  
+
 footButton.addEventListener("click", ()=> {
     if(currentStep < images.length -1){
         currentStep++;
         parkImage.src = images[currentStep];
+
+        showHandprints();
     }
 });
+showHandprints();
             </script>
             </body>
             </html>

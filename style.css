@@ -32,3 +32,19 @@ body{
 #footButton:hover{
     transform: translate(-50%) scale(1.15);
 }
+
+#handContainer {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 5;
+
+}
+
+.handprint{
+    position: absolute;
+    width: 100px;
+    transform: translate(-50%, -50%);
+    pointer-events: auto;
+    cursor: grab;
+}
