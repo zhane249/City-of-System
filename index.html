@@ -83,12 +83,14 @@ function showHandprints() {
  
 
 footButton.addEventListener("click", ()=> {
-    if(currentStep < images.length -1){
-        currentStep++;
+    currentStep++;
+    if(currentStep >= images.length){
+        currentStep = 0;
+    }
         parkImage.src = images[currentStep];
 
         showHandprints();
-    }
+    
 });
 showHandprints();
             </script>
