@@ -39,23 +39,48 @@ const handprints = [
 "hands/blue.png", "hands/green.png", "hands/orange.png", "hands/purple.png"
         ];
 
-        const handCount = [2, 3, 1, 2, 4, 1, 3, 2, 4, 2];
+        const handCount = [2, 3, 1, 2, 1, 4, 3, 2, 6, 2];
 
-  function showHandprints(){
+
+
+function showHandprints() {
     handContainer.innerHTML = "";
 
-    for (let i = 0; i< handCount[currentStep]; i++){
-        let hand =document.createElement("img");
+    for (let i = 0; i < handCount[currentStep]; i++) {
+        let hand = document.createElement("img");
 
-        hand.src = handprints [i % handprints.length];
+        hand.src = handprints[i % handprints.length];
         hand.className = "handprint";
-        hand.style.left = (20 + i *20) + "%";
-        hand.style.top = (30 + i *10) + "%";
+        hand.draggable = false;
+
+        // Starting positions
+        hand.style.left = (20 + i * 20) + "%";
+        hand.style.top = (30 + i * 10) + "%";
         hand.style.width = "100px";
 
         handContainer.appendChild(hand);
+
+        // Dragging
+        let dragging = false;
+
+        hand.addEventListener("mousedown", (event) => {
+            dragging = true;
+            event.preventDefault();
+        });
+
+        document.addEventListener("mousemove", (event) => {
+            if (dragging) {
+                hand.style.left = event.clientX + "px";
+                hand.style.top = event.clientY + "px";
+            }
+        });
+
+        document.addEventListener("mouseup", () => {
+            dragging = false;
+        });
     }
-  }  
+}
+ 
 
 footButton.addEventListener("click", ()=> {
     if(currentStep < images.length -1){

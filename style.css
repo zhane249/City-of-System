@@ -48,3 +48,7 @@ body{
     pointer-events: auto;
     cursor: grab;
 }
+
+.handprint:active{
+    cursor: grabbing;
+}
